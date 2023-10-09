@@ -1,0 +1,4 @@
+*.swp
+C_linking_test/test
+/target
+/Cargo.lock
