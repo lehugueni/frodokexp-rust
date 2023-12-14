@@ -30,7 +30,7 @@ pub fn gen_matrix_uniform_beta(r: usize, c: usize) -> Matrix {
 pub fn gen_matrix_uniform_seed(r: usize, c: usize, seed: [u8; 32]) -> Matrix {
     let size = r*c;
     let mut data = Vec::with_capacity(size);
-    let dist = Uniform::from(0..Q+1);
+    let dist = Uniform::from(0..Q);
     let mut prng = StdRng::from_seed(seed);
     for _ in 0..size {
         data.push(dist.sample(&mut prng));
@@ -41,7 +41,7 @@ pub fn gen_matrix_uniform_seed(r: usize, c: usize, seed: [u8; 32]) -> Matrix {
 pub fn gen_matrix_transpose_uniform_seed(r: usize, c:usize, seed: [u8; 32]) -> Matrix {
     let size = r*c;
     let mut data = vec![0; size];
-    let dist = Uniform::from(0..Q+1);
+    let dist = Uniform::from(0..Q);
     let mut prng = StdRng::from_seed(seed);
     for i in 0..c {
         for j in 0..r {

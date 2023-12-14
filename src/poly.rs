@@ -39,8 +39,9 @@ fn closest_v(v: Element, b: Element) -> Element {
         let offset = -sign;
         let rep = (distance+offset < curr_dist) as Element;
         let rep_bar = 1-rep;
+        let equal = (c == v) as i32;
         curr_dist = (rep * (distance+offset)) | (rep_bar * curr_dist);
-        curr_closest_v = (rep * (c+sign)) | (rep_bar * curr_closest_v);
+        curr_closest_v = (rep * (c+sign-equal)) | (rep_bar * curr_closest_v);
     }
     curr_closest_v = (cr_v as Element * v) | ((1-cr_v as Element) * curr_closest_v);
     curr_closest_v.rem_euclid(Q << 1)

@@ -52,7 +52,7 @@ mod tests {
 
     #[test]
     fn correctness_test() {
-        let nb_tests = 1;
+        let nb_tests = 10;
         for _ in 0..nb_tests {
             let seed = gen_pp();
             let (b_a, (sk_a, f_a)) = gen_a(seed);
